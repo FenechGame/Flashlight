@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fon"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/switch_off"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/grey_round"
+        android:src="@drawable/ic_power"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/switch_on"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/blue_round"
+        android:src="@drawable/ic_power"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/switch_off"
+        app:layout_constraintEnd_toEndOf="@+id/switch_off"
+        app:layout_constraintStart_toStartOf="@+id/switch_off"
+        app:layout_constraintTop_toTopOf="@+id/switch_off" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_blinking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Мигание"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/switch_call_blinking"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_call_blinking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Мигание при звонке"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/switch_blinking"
+        app:layout_constraintEnd_toStartOf="@+id/switch_blinking"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/switch_blinking" />
+</androidx.constraintlayout.widget.ConstraintLayout>
